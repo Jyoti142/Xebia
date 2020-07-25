@@ -1,0 +1,23 @@
+.col {
+    display: inline-block
+}
+.left-sidebar {
+    width: 40%;
+    float: left;
+}
+.right-sidebar {
+    width: 60%;
+    float: left;
+}
+
+.desc span {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #dddddd;
+}
+.product-box {
+    border: 1px solid #dddddd;
+    margin-left: 10px;
+    width: 300px;
+    float: left;
+}

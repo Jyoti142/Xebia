@@ -1,0 +1,79 @@
+<header>
+    <div class="container-wrap">
+        <div class="logo col ">
+            <h1> lOGO</h1>
+        </div> 
+        <div class="search col" > 
+<input type="text">
+
+        </div>
+        <div class="user col">
+user name
+        </div>
+
+    </div>
+
+</header>
+<section>
+
+    <div class="left-sidebar">
+
+        <div class="color-bar">
+color
+        </div>
+        <div class="brand-bar">
+brand
+        </div>
+        <div class="price-bar">
+price
+        </div>
+        <div class="discount-bar">
+discount
+        </div>
+
+
+
+    </div>
+    <div class="right-sidebar">
+
+<div class="" *ngFor="let item of products">
+
+
+
+
+<div class="product-box">
+    <div class="product-img">
+        <img [src]='item.image'>
+    </div>
+    <div class="desc">
+        <p style="margin:5px 0px;">
+            <span style="width:70%;font-size: 12px;display: inline-block;font-weight: 600;">{{ item.title }}</span>
+            <span style="font-size: 12px;display: inline-block;width:30%;text-align: right;"> color : <strong style="width:13px;height:13px;border-radius: 4px;display: inline-flex;" [ngStyle]="{'background-color': item.colour.color}">&nbsp; &nbsp; &nbsp;</strong></span>
+        </p>
+      <div>
+        <span style="width:70%;font-size: 12px;display: inline-block;">{{ 'Brand : '+item.brand }}</span>
+        <span style="display: inline-block;width:30%;font-size:12px;text-align: right;cursor: pointer;">
+            <span id="{{ item.id }}}" (click)="addItemToCart(item.id);" *ngIf="!item.isadded">
+                <img style="width: 16px;padding: 2px 5px;" src="../../assets/images/plus.png">
+                <span style="vertical-align: super;">Add</span>
+            </span>
+            <span id="{{ item.id }}}" (click)="removeItemFromCart(item.id);" *ngIf="item.isadded" >
+                <img style="width: 16px;padding: 2px 5px;" src="../../assets/images/minus.png">
+                <span style="vertical-align: super;">Remove</span>
+            </span>
+        </span>
+      </div>
+       <p style="margin:5px 0px;">
+        <span style="width:70%;font-size: 12px;display: inline-block;">{{ 'Price : ₹'+item.price.final_price }}</span>
+    </p>
+      
+    </div>
+</div>
+</div>
+
+
+
+
+        
+    </div>
+</section>
